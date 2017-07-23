@@ -1,0 +1,10 @@
+import re
+filename = raw_input('Enter a file:')
+if len(filename) < 1 : filename = 'regex_sum_379218.txt'
+handle = open(filename)
+sum = 0
+for line in handle:
+    str_num = re.findall('[0-9]+',line)
+    for val in str_num:
+        sum = sum + int(val)
+print sum
